@@ -6,11 +6,7 @@
 //  Copyright © 2019 com.nguyenhieu.game. All rights reserved.
 //
 
-import Foundation
 import UIKit
-protocol ViewChatRouter {
-    
-}
-extension ViewChatController: ViewChatRouter {
-    
-}
+
+protocol ViewChatRouter { }
+extension ViewChatController: ViewChatRouter { }

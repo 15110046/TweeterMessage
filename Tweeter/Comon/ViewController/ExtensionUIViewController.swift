@@ -6,8 +6,8 @@
 //  Copyright © 2019 com.nguyenhieu.game. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 extension UIViewController {
     func showAlert(withTitle title: String, withMessage message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

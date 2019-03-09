@@ -6,10 +6,10 @@
 //  Copyright © 2019 com.nguyenhieu.game. All rights reserved.
 //
 
-import Foundation
+
 import UIKit
+
 extension UITableView {
-    
     func scrollToBottom() {
         if self.numberOfRows(inSection:  self.numberOfSections - 1) > 0 {
             DispatchQueue.main.async {
@@ -19,7 +19,6 @@ extension UITableView {
                 self.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
         }
-        
     }
     
     func scrollToTop() {

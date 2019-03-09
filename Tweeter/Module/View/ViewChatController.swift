@@ -28,16 +28,8 @@ class ViewChatController: UIViewController {
         setUp(tableView: tblViewChat, nibName: "CellChat", identifierCell: "CellChat")
         viewBackgroundTextView.layer.cornerRadius = viewBackgroundTextView.bounds.size.height/2
         btnSendMess.isHidden = true
-        var str = "this.is/a#crazy[string]right$here.$[]#/"
-        
-        if let strEncoded = str.addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
-            print(strEncoded)
-            
-            if let strDecoded = strEncoded.removingPercentEncoding {
-                print(strDecoded)
-            }
-        }
     }
+    
     private func initPresenterImp() {
         presenter = ViewChatPresenterImp(interactor: ViewChatInteractorImp(param: "arrContent", completion: { (trueOrFalse) in
             if trueOrFalse {
@@ -46,11 +38,13 @@ class ViewChatController: UIViewController {
             }
         }), router: self, tbView: self)
     }
+    
     private func setUp(tableView: UITableView, nibName: String, identifierCell: String) {
         let nib = UINib.init(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: identifierCell)
         tableView.separatorColor = .white
     }
+    
     private func setUpObserver() {
         NotificationCenter.default.addObserver(
             self,
@@ -65,6 +59,7 @@ class ViewChatController: UIViewController {
             object: nil
         )
     }
+    
     @objc fileprivate func keyboardWillShow(notification:NSNotification) {
         if let keyboardRectValue = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardRectValue.height
@@ -79,6 +74,7 @@ class ViewChatController: UIViewController {
             }
         }
     }
+    
     @objc fileprivate func keyboardWillHide(notification:NSNotification) {
         constrainBottomTextView.constant = 0
         tblViewChat.scrollToBottom()
@@ -90,6 +86,7 @@ class ViewChatController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
     @IBAction private func clickSendContentChat(_ sender: Any) {
         presenter?.sendData(from: uitextView.text, tbv: self, completion: { (string) in
             showAlert(withTitle: "Error!", withMessage: string)
@@ -98,6 +95,7 @@ class ViewChatController: UIViewController {
         autoSizeFor(textView: uitextView)
         tblViewChat.reloadData()
     }
+    
     private func autoSizeFor(textView: UITextView) {
         let size = CGSize(width: view.frame.width - 44, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
@@ -105,21 +103,22 @@ class ViewChatController: UIViewController {
         textView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
                 constraint.constant = estimatedSize.height
-//                tblViewChat.scrollToBottom()
             }
         }
     }
-
+    
 }
 extension ViewChatController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
          autoSizeFor(textView: textView)
          tblViewChat.scrollToBottom()
     }
+    
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         setUpObserver()
         return true
     }
+    
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         setUpObserver()
         return true
@@ -145,6 +144,7 @@ extension ViewChatController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

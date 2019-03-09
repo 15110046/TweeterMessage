@@ -12,6 +12,7 @@ import Firebase
 class ServiceOnline {
     static var share = ServiceOnline()
     private var ref = Database.database().reference()
+    
     func getData(param: String, comletion: @escaping (_ data: Any?) -> ()) {
         ref.child("Tweeter").child(param).observe(.value) { (snapShot) in
             guard let value = snapShot.value else {
@@ -25,13 +26,12 @@ class ServiceOnline {
             }
         }
     }
+    
     func pushData(param: String, key: Int) {
-        
         if let strEncoded = param.addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
             let dicContentChat = ["content": strEncoded, "key": key] as [String : Any]
             ref.child("Tweeter").child("arrContent").child("\(key)").setValue(dicContentChat)
         }
-        
     }
 }
 

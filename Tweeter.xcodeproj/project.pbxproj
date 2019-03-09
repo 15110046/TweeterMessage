@@ -22,8 +22,9 @@
 		CC9AA8EA223057D900D4EA96 /* CellChat.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8E9223057D900D4EA96 /* CellChat.xib */; };
 		CC9AA8EE223058C000D4EA96 /* CellChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8ED223058C000D4EA96 /* CellChat.swift */; };
 		CC9AA8F022305C2700D4EA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */; };
-		CC9AA8F222305E5F00D4EA96 /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */; };
 		CC9AA8F522305F1500D4EA96 /* ServiceOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */; };
+		CCC57A572233E0BE00DC0B9A /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC57A562233E0BE00DC0B9A /* ExtensionUIColor.swift */; };
+		CCC57A592233E1B500DC0B9A /* ExtensionStoryboardInstatiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC57A582233E1B500DC0B9A /* ExtensionStoryboardInstatiable.swift */; };
 		CCF53A8A2233D23500FA1925 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +48,9 @@
 		CC9AA8E9223057D900D4EA96 /* CellChat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellChat.xib; sourceTree = "<group>"; };
 		CC9AA8ED223058C000D4EA96 /* CellChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellChat.swift; sourceTree = "<group>"; };
 		CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollection.swift; sourceTree = "<group>"; };
 		CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOnline.swift; sourceTree = "<group>"; };
+		CCC57A562233E0BE00DC0B9A /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		CCC57A582233E1B500DC0B9A /* ExtensionStoryboardInstatiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStoryboardInstatiable.swift; sourceTree = "<group>"; };
 		CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +108,8 @@
 				CC9AA8D422304C7600D4EA96 /* Module */,
 				CC9AA8C22230140700D4EA96 /* AppDelegate.swift */,
 				CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */,
-				CC9AA8C92230140900D4EA96 /* Assets.xcassets */,
 				CC9AA8CB2230140900D4EA96 /* LaunchScreen.storyboard */,
+				CC9AA8C92230140900D4EA96 /* Assets.xcassets */,
 				CC9AA8CE2230140900D4EA96 /* Info.plist */,
 			);
 			path = Tweeter;
@@ -179,13 +181,62 @@
 		CC9AA8F322305F0700D4EA96 /* Comon */ = {
 			isa = PBXGroup;
 			children = (
-				CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */,
-				CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */,
-				CC8BC34522316E2100FE29A0 /* ExtensionTableView.swift */,
-				CC8BC3472231732600FE29A0 /* ExtensionString.swift */,
-				CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */,
+				CCC57A5F2233E2CE00DC0B9A /* StoryboardInstatiable */,
+				CCC57A5E2233E2C200DC0B9A /* Color */,
+				CCC57A5D2233E2B300DC0B9A /* ViewController */,
+				CCC57A5C2233E2A900DC0B9A /* String */,
+				CCC57A5B2233E29C00DC0B9A /* TableView */,
+				CCC57A5A2233E29000DC0B9A /* Service */,
 			);
 			path = Comon;
+			sourceTree = "<group>";
+		};
+		CCC57A5A2233E29000DC0B9A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CCC57A5B2233E29C00DC0B9A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CC8BC34522316E2100FE29A0 /* ExtensionTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		CCC57A5C2233E2A900DC0B9A /* String */ = {
+			isa = PBXGroup;
+			children = (
+				CC8BC3472231732600FE29A0 /* ExtensionString.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		CCC57A5D2233E2B300DC0B9A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CCC57A5E2233E2C200DC0B9A /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				CCC57A562233E0BE00DC0B9A /* ExtensionUIColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		CCC57A5F2233E2CE00DC0B9A /* StoryboardInstatiable */ = {
+			isa = PBXGroup;
+			children = (
+				CCC57A582233E1B500DC0B9A /* ExtensionStoryboardInstatiable.swift */,
+			);
+			path = StoryboardInstatiable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,14 +368,15 @@
 				CCF53A8A2233D23500FA1925 /* ExtensionUIViewController.swift in Sources */,
 				CC9AA8F522305F1500D4EA96 /* ServiceOnline.swift in Sources */,
 				CC9AA8EE223058C000D4EA96 /* CellChat.swift in Sources */,
+				CCC57A592233E1B500DC0B9A /* ExtensionStoryboardInstatiable.swift in Sources */,
 				CC9AA8DF22304D3B00D4EA96 /* ViewChatPresenter.swift in Sources */,
 				CC9AA8C32230140700D4EA96 /* AppDelegate.swift in Sources */,
 				CC9AA8E5223056B800D4EA96 /* ModelContentViewChat.swift in Sources */,
 				CC8BC34622316E2100FE29A0 /* ExtensionTableView.swift in Sources */,
+				CCC57A572233E0BE00DC0B9A /* ExtensionUIColor.swift in Sources */,
 				CC9AA8DD22304D1700D4EA96 /* ViewChatController.swift in Sources */,
 				CC8BC3482231732600FE29A0 /* ExtensionString.swift in Sources */,
 				CC9AA8E122304D8C00D4EA96 /* ViewChatInteractor.swift in Sources */,
-				CC9AA8F222305E5F00D4EA96 /* ExtensionCollection.swift in Sources */,
 				CC9AA8E322304DEA00D4EA96 /* ViewChatRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
