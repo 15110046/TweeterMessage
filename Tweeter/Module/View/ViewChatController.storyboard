@@ -107,7 +107,7 @@
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="550.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TDF-QB-AQf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="550.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="375" height="540.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Jt0-hl-Kjj" id="16a-iV-19f"/>
@@ -115,10 +115,10 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.78000665848144424" green="0.8231821021442427" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TDF-QB-AQf" secondAttribute="trailing" id="5LS-cG-j13"/>
-                                    <constraint firstItem="TDF-QB-AQf" firstAttribute="top" secondItem="Wse-z9-nsz" secondAttribute="top" id="7rc-ZD-qM0"/>
+                                    <constraint firstItem="TDF-QB-AQf" firstAttribute="top" secondItem="Wse-z9-nsz" secondAttribute="top" constant="10" id="7rc-ZD-qM0"/>
                                     <constraint firstItem="TDF-QB-AQf" firstAttribute="leading" secondItem="Wse-z9-nsz" secondAttribute="leading" id="Hs7-hd-YeX"/>
                                     <constraint firstAttribute="bottom" secondItem="TDF-QB-AQf" secondAttribute="bottom" id="lIS-o1-IkE"/>
                                 </constraints>
