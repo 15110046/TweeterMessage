@@ -26,8 +26,12 @@ class ServiceOnline {
         }
     }
     func pushData(param: String, key: Int) {
-        let dicContentChat = ["content": param, "key": key] as [String : Any]
-        ref.child("Tweeter").child("arrContent").child("\(key)").setValue(dicContentChat)
+        
+        if let strEncoded = param.addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
+            let dicContentChat = ["content": strEncoded, "key": key] as [String : Any]
+            ref.child("Tweeter").child("arrContent").child("\(key)").setValue(dicContentChat)
+        }
+        
     }
 }
 

@@ -8,32 +8,48 @@
 
 import UIKit
 
+protocol ViewChatControllerInterFace {
+    func reloadData()
+}
+
 class ViewChatController: UIViewController {
     
-    @IBOutlet weak var viewBackgroundTextView: UIView!
-    private var presenter: ViewChatPresenter?
-    
+    @IBOutlet private weak var btnSendMess: UIButton!
+    @IBOutlet private weak var viewBackgroundTextView: UIView!
+              private var presenter: ViewChatPresenter?
     @IBOutlet private weak var constrainBottomTextView: NSLayoutConstraint!
     @IBOutlet private weak var viewContentTableView: UIView!
     @IBOutlet private weak var tblViewChat: UITableView!
     @IBOutlet private weak var uitextView: UITextView!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        initPresenterImp()
+        setUp(tableView: tblViewChat, nibName: "CellChat", identifierCell: "CellChat")
+        viewBackgroundTextView.layer.cornerRadius = viewBackgroundTextView.bounds.size.height/2
+        btnSendMess.isHidden = true
+        var str = "this.is/a#crazy[string]right$here.$[]#/"
+        
+        if let strEncoded = str.addingPercentEncoding(withAllowedCharacters: .alphanumerics) {
+            print(strEncoded)
+            
+            if let strDecoded = strEncoded.removingPercentEncoding {
+                print(strDecoded)
+            }
+        }
+    }
+    private func initPresenterImp() {
         presenter = ViewChatPresenterImp(interactor: ViewChatInteractorImp(param: "arrContent", completion: { (trueOrFalse) in
             if trueOrFalse {
                 self.tblViewChat.reloadData()
                 self.tblViewChat.scrollToBottom()
             }
         }), router: self, tbView: self)
-        uitextView.delegate = self
-        uitextView.font = UIFont(name: "AmericanTypewriter-Bold", size: 18)
-        let nib = UINib.init(nibName: "CellChat", bundle: nil)
-        tblViewChat.register(nib, forCellReuseIdentifier: "CellChat")
-        tblViewChat.separatorColor = .white
-        viewBackgroundTextView.layer.cornerRadius = viewBackgroundTextView.bounds.size.height/2
+    }
+    private func setUp(tableView: UITableView, nibName: String, identifierCell: String) {
+        let nib = UINib.init(nibName: nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: identifierCell)
+        tableView.separatorColor = .white
     }
     private func setUpObserver() {
         NotificationCenter.default.addObserver(
@@ -56,6 +72,7 @@ class ViewChatController: UIViewController {
             tblViewChat.scrollToBottom()
             if uitextView.text == "Bắt đầu một tin nhắn" {
                 uitextView.text = ""
+                btnSendMess.isHidden = false
             }
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
@@ -67,35 +84,37 @@ class ViewChatController: UIViewController {
         tblViewChat.scrollToBottom()
         if uitextView.text == "" {
             uitextView.text = "Bắt đầu một tin nhắn"
+            btnSendMess.isHidden = true
         }
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
     }
-    @IBAction func clickSendContentChat(_ sender: Any) {
+    @IBAction private func clickSendContentChat(_ sender: Any) {
         presenter?.sendData(from: uitextView.text, tbv: self, completion: { (string) in
-            print(string)
+            showAlert(withTitle: "Error!", withMessage: string)
         })
-//        if uitextView.text.checkAllCharacterSpace() { return }
         uitextView.text = ""
+        autoSizeFor(textView: uitextView)
         tblViewChat.reloadData()
     }
-}
-extension ViewChatController: UITextViewDelegate {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    func textViewDidChange(_ textView: UITextView) {
-     
+    private func autoSizeFor(textView: UITextView) {
         let size = CGSize(width: view.frame.width - 44, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
         textView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
                 constraint.constant = estimatedSize.height
-                tblViewChat.scrollToBottom()
+//                tblViewChat.scrollToBottom()
             }
         }
+    }
+
+}
+extension ViewChatController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+         autoSizeFor(textView: textView)
+         tblViewChat.scrollToBottom()
     }
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         setUpObserver()
@@ -123,17 +142,18 @@ extension ViewChatController: UITableViewDataSource {
     
 }
 extension ViewChatController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }
 
-protocol UpdataUITableView {
-    func reloadData()
-}
-extension ViewChatController: UpdataUITableView{
+extension ViewChatController: ViewChatControllerInterFace {
     func reloadData() {
         tblViewChat.reloadData()
     }
 }
+
 

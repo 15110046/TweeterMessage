@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 extension String {
     func substring(from: Int?, to: Int?) -> String {
         if let start = from {
@@ -112,47 +113,77 @@ extension String {
 
 
 extension String {
-    func check50CharacterHaveSpace() -> Bool {
+     func getFirstNCharacters(number: Int) -> String {
+        if self.count <= number {
+            return self
+        }
+        
+        if self.checkStringHaveMin1SpaceCharacter() {
+            if self[number] != " " {
+                return getFirstNCharacters(number: number - 1)
+            }
+        }
+        else {
+            return self[0..<number]
+        }
+        return self[0..<number]
+    }
+     func getRestCharacterFrom(position number: Int) -> String {
+        if self.count <= number {
+            return self
+        }
+        if self.checkStringHaveMin1SpaceCharacter() {
+            if self[number] == " " {
+                return self[number + 1..<self.count]
+            }
+        }
+        else {
+            return self[number + 1..<self.count]
+        }
+        return getRestCharacterFrom(position: number - 1)
+    }
+    
+    func checkNumberCharacterHaveSpace(number: Int) -> Bool {
         var i = 0
         while i < self.count - 1 {
             if self[i] == " " {
                 i = i + 1
-                if (i + 50 < self.count-1) {
-                    if self[i..<i+50].checkAllCharacterHaventSpace() == false {   //50 kí tự có khoảng trắng
+                if (i + number < self.count-1) {
+                    if self[i..<i+number].checkStringHaveMin1SpaceCharacter() {
                         i = i + 1
                     }
                     else {
-                        return false // 50 kí tự của từ k có khoảng trắng
+                        return false
                     }
                 }
                 else {
-                    if self[i..<self.count-1].checkAllCharacterHaventSpace() == false {   //50 kí tự có khoảng trắng
-                        
+                    if self[i..<self.count-1].checkStringHaveMin1SpaceCharacter() {
+    
                         i = i + 1
                     }
                     else {
-                        if self[i..<self.count-1].count < 50 {
+                        if self[i..<self.count-1].count < number {
                             return true
                         }
-                        return false // 50 kí tự của từ k có khoảng trắng
+                        return false
                     }
                 }
             }
             else {
-                if (i+50 < self.count - 1) {
-                    if self[i..<i+50].checkAllCharacterHaventSpace() == false {
+                if (i+number < self.count - 1) {
+                    if self[i..<i+number].checkStringHaveMin1SpaceCharacter() {
                         i = i + 1
                     }
                     else {
-                        return false // 50 kí tự của từ k có khoảng trắng
+                        return false 
                     }
                 }
                 else {
-                    if self[i..<self.count-1].checkAllCharacterHaventSpace() == false {
+                    if self[i..<self.count-1].checkStringHaveMin1SpaceCharacter() {
                         i = i + 1
                     }
                     else {
-                        if self[i..<self.count-1].count < 50 {
+                        if self[i..<self.count-1].count < number {
                             return true
                         }
                         return false
@@ -170,12 +201,16 @@ extension String {
         }
         return true
     }
-    func checkAllCharacterHaventSpace() -> Bool {
+
+    func checkStringHaveMin1SpaceCharacter() -> Bool {
         for i in self {
             if i == " " {
-                return false
+                return true
             }
         }
-        return true
+        return false
     }
+    
+
+
 }

@@ -11,8 +11,6 @@
 		CC8BC34622316E2100FE29A0 /* ExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC34522316E2100FE29A0 /* ExtensionTableView.swift */; };
 		CC8BC3482231732600FE29A0 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC3472231732600FE29A0 /* ExtensionString.swift */; };
 		CC9AA8C32230140700D4EA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8C22230140700D4EA96 /* AppDelegate.swift */; };
-		CC9AA8C52230140700D4EA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8C42230140700D4EA96 /* ViewController.swift */; };
-		CC9AA8C82230140700D4EA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8C62230140700D4EA96 /* Main.storyboard */; };
 		CC9AA8CA2230140900D4EA96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8C92230140900D4EA96 /* Assets.xcassets */; };
 		CC9AA8CD2230140900D4EA96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8CB2230140900D4EA96 /* LaunchScreen.storyboard */; };
 		CC9AA8DB22304CFB00D4EA96 /* ViewChatController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8DA22304CFB00D4EA96 /* ViewChatController.storyboard */; };
@@ -26,6 +24,7 @@
 		CC9AA8F022305C2700D4EA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */; };
 		CC9AA8F222305E5F00D4EA96 /* ExtensionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */; };
 		CC9AA8F522305F1500D4EA96 /* ServiceOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */; };
+		CCF53A8A2233D23500FA1925 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +35,6 @@
 		CC8BC3472231732600FE29A0 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		CC9AA8BF2230140700D4EA96 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9AA8C22230140700D4EA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC9AA8C42230140700D4EA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC9AA8C72230140700D4EA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC9AA8C92230140900D4EA96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9AA8CC2230140900D4EA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9AA8CE2230140900D4EA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +49,7 @@
 		CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollection.swift; sourceTree = "<group>"; };
 		CC9AA8F422305F1500D4EA96 /* ServiceOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOnline.swift; sourceTree = "<group>"; };
+		CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +105,7 @@
 				CC9AA8F322305F0700D4EA96 /* Comon */,
 				CC9AA8D422304C7600D4EA96 /* Module */,
 				CC9AA8C22230140700D4EA96 /* AppDelegate.swift */,
-				CC9AA8C42230140700D4EA96 /* ViewController.swift */,
 				CC9AA8EF22305C2700D4EA96 /* GoogleService-Info.plist */,
-				CC9AA8C62230140700D4EA96 /* Main.storyboard */,
 				CC9AA8C92230140900D4EA96 /* Assets.xcassets */,
 				CC9AA8CB2230140900D4EA96 /* LaunchScreen.storyboard */,
 				CC9AA8CE2230140900D4EA96 /* Info.plist */,
@@ -187,6 +183,7 @@
 				CC9AA8F122305E5F00D4EA96 /* ExtensionCollection.swift */,
 				CC8BC34522316E2100FE29A0 /* ExtensionTableView.swift */,
 				CC8BC3472231732600FE29A0 /* ExtensionString.swift */,
+				CCF53A892233D23500FA1925 /* ExtensionUIViewController.swift */,
 			);
 			path = Comon;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 				CC9AA8EA223057D900D4EA96 /* CellChat.xib in Resources */,
 				CC9AA8CD2230140900D4EA96 /* LaunchScreen.storyboard in Resources */,
 				CC9AA8CA2230140900D4EA96 /* Assets.xcassets in Resources */,
-				CC9AA8C82230140700D4EA96 /* Main.storyboard in Resources */,
 				CC9AA8DB22304CFB00D4EA96 /* ViewChatController.storyboard in Resources */,
 				CC9AA8F022305C2700D4EA96 /* GoogleService-Info.plist in Resources */,
 			);
@@ -318,8 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF53A8A2233D23500FA1925 /* ExtensionUIViewController.swift in Sources */,
 				CC9AA8F522305F1500D4EA96 /* ServiceOnline.swift in Sources */,
-				CC9AA8C52230140700D4EA96 /* ViewController.swift in Sources */,
 				CC9AA8EE223058C000D4EA96 /* CellChat.swift in Sources */,
 				CC9AA8DF22304D3B00D4EA96 /* ViewChatPresenter.swift in Sources */,
 				CC9AA8C32230140700D4EA96 /* AppDelegate.swift in Sources */,
@@ -336,14 +332,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC9AA8C62230140700D4EA96 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC9AA8C72230140700D4EA96 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC9AA8CB2230140900D4EA96 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
