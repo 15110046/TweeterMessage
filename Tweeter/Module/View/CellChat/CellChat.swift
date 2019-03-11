@@ -13,7 +13,7 @@ class CellChat: UITableViewCell {
     private var viewBackgroundContentChat: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.hexStringToUIColor(hex: "#0084FF", alpha: 1)
+        view.backgroundColor = UIColor.hexStringToUIColor(hex: "CE0755", alpha: 1)
         return view
     }()
     
@@ -22,6 +22,7 @@ class CellChat: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.backgroundColor = .clear
         lbl.textColor = .white
+        lbl.font = UIFont.systemFont(ofSize: 14)
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -49,9 +50,9 @@ class CellChat: UITableViewCell {
     }
     private func autoLayoutlblContentChat() {
         viewBackgroundContentChat.addSubview(lblContentCell)
-        lblContentCell.topAnchor.constraint(equalTo: viewBackgroundContentChat.topAnchor, constant: 5).isActive = true
-        lblContentCell.bottomAnchor.constraint(equalTo: viewBackgroundContentChat.bottomAnchor, constant: -5).isActive = true
-        lblContentCell.rightAnchor.constraint(equalTo: viewBackgroundContentChat.rightAnchor, constant: -10).isActive = true
-        lblContentCell.leftAnchor.constraint(equalTo: viewBackgroundContentChat.leftAnchor, constant: 10).isActive = true
+        lblContentCell.topAnchor.constraint(equalTo: viewBackgroundContentChat.topAnchor, constant: 10).isActive = true
+        lblContentCell.bottomAnchor.constraint(equalTo: viewBackgroundContentChat.bottomAnchor, constant: -10).isActive = true
+        lblContentCell.rightAnchor.constraint(equalTo: viewBackgroundContentChat.rightAnchor, constant: -14).isActive = true
+        lblContentCell.leftAnchor.constraint(equalTo: viewBackgroundContentChat.leftAnchor, constant: 14).isActive = true
     }
 }

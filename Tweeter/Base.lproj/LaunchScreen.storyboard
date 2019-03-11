@@ -18,14 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTweeter" translatesAutoresizingMaskIntoConstraints="NO" id="mxz-Tj-4eO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mxz-Tj-4eO">
                                 <rect key="frame" x="125" y="195" width="125" height="125"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mxz-Tj-4eO" secondAttribute="height" multiplier="1:1" id="qaU-vK-Xhq"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.30588235294117649" green="0.6705882352941176" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.80784313725490198" green="0.027450980392156862" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mxz-Tj-4eO" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1/3" id="3lX-FY-mmc"/>
                             <constraint firstItem="mxz-Tj-4eO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.75" id="5Zw-yy-igy"/>
@@ -40,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoTweeter" width="2267" height="2267"/>
+        <image name="Logo" width="640" height="640"/>
     </resources>
 </document>

@@ -14,6 +14,7 @@ protocol ViewChatControllerInterFace {
 
 class ViewChatController: UIViewController {
     
+    @IBOutlet weak var marginRightViewBackgroundTextView: NSLayoutConstraint!
     @IBOutlet private weak var btnSendMess: UIButton!
     @IBOutlet private weak var viewBackgroundTextView: UIView!
               private var presenter: ViewChatPresenter?
@@ -27,7 +28,19 @@ class ViewChatController: UIViewController {
         initPresenterImp()
         setUp(tableView: tblViewChat, nibName: "CellChat", identifierCell: "CellChat")
         viewBackgroundTextView.layer.cornerRadius = viewBackgroundTextView.bounds.size.height/2
+        
+        autoAnimationHideButton()
+        navigationItem.title = "Demo TweeterChat"
+    }
+    private func autoAnimationHideButton() {
         btnSendMess.isHidden = true
+        marginRightViewBackgroundTextView.priority = UILayoutPriority(rawValue: 999.5)
+       
+    }
+    private func autoAnimationNotHideButton() {
+        btnSendMess.isHidden = false
+        marginRightViewBackgroundTextView.priority = UILayoutPriority(rawValue: 998)
+
     }
     
     private func initPresenterImp() {
@@ -67,7 +80,7 @@ class ViewChatController: UIViewController {
             tblViewChat.scrollToBottom()
             if uitextView.text == "Bắt đầu một tin nhắn" {
                 uitextView.text = ""
-                btnSendMess.isHidden = false
+               autoAnimationNotHideButton()
             }
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
@@ -80,7 +93,7 @@ class ViewChatController: UIViewController {
         tblViewChat.scrollToBottom()
         if uitextView.text == "" {
             uitextView.text = "Bắt đầu một tin nhắn"
-            btnSendMess.isHidden = true
+            autoAnimationHideButton()
         }
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -97,7 +110,7 @@ class ViewChatController: UIViewController {
     }
     
     private func autoSizeFor(textView: UITextView) {
-        let size = CGSize(width: view.frame.width - 44, height: .infinity)
+        let size = CGSize(width: textView.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
         textView.constraints.forEach { (constraint) in
@@ -116,11 +129,13 @@ extension ViewChatController: UITextViewDelegate {
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         setUpObserver()
+//        autoSizeFor(textView: textView)
         return true
     }
     
     func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         setUpObserver()
+//        autoSizeFor(textView: textView)
         return true
     }
     
