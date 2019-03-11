@@ -12,12 +12,14 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let mainVC = instantiate(ViewChatController.self)
-        window?.rootViewController = mainVC
+        let mainVC = instantiate(ViewChatController.self, storyboard: "ViewChatController")
+        navigationController = UINavigationController(rootViewController: mainVC)
+        window?.rootViewController = navigationController
         return true
     }
 

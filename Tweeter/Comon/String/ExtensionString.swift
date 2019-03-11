@@ -15,26 +15,26 @@ extension String {
         }
         
         if self.checkStringHaveMin1SpaceCharacter() {
-            if self[number] != " " {
+            if self[number-4] != " " {
                 return getFirstNCharacters(number: number - 1)
             }
         }
         else {
-            return self[0..<number]
+            return self[0..<number-4]
         }
-        return self[0..<number]
+        return self[0..<number-4]
     }
     func getRestCharacterFrom(position number: Int) -> String {
         if self.count <= number {
             return self
         }
         if self.checkStringHaveMin1SpaceCharacter() {
-            if self[number] == " " {
-                return self[number + 1..<self.count]
+            if self[number-4] == " " {
+                return self[number - 3..<self.count]
             }
         }
         else {
-            return self[number + 1..<self.count]
+            return self[number - 3..<self.count]
         }
         return getRestCharacterFrom(position: number - 1)
     }

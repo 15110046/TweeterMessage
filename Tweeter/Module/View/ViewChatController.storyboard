@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jt0-hl-Kjj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Chat Controller-->
         <scene sceneID="ZYp-qJ-ofr">
             <objects>
-                <viewController id="Jt0-hl-Kjj" customClass="ViewChatController" customModule="Tweeter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewChatController" id="Jt0-hl-Kjj" customClass="ViewChatController" customModule="Tweeter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BI9-o7-97q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,35 +79,11 @@
                                     <constraint firstItem="s77-Wp-obd" firstAttribute="leading" secondItem="HkK-E0-bcP" secondAttribute="leading" constant="20" id="hKP-mv-Z2t"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQC-6H-HPT" userLabel="ViewHeader">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVw-rj-0cV">
-                                        <rect key="frame" x="141.5" y="29.5" width="92" height="21"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Demo Chat">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="17" name="AmericanTypewriter-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.32941176470588235" green="0.65490196078431373" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.1404082676" green="0.32499701860000002" blue="0.91566862309999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HVw-rj-0cV" secondAttribute="bottom" constant="5" id="NUT-os-iUG"/>
-                                    <constraint firstItem="HVw-rj-0cV" firstAttribute="centerX" secondItem="GQC-6H-HPT" secondAttribute="centerX" id="zBf-3a-Sbz"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wse-z9-nsz" userLabel="ViewContent">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="550.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="542"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TDF-QB-AQf">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="540.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="375" height="532"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="Jt0-hl-Kjj" id="16a-iV-19f"/>
@@ -127,19 +103,16 @@
                         <color key="backgroundColor" red="0.61661662459961031" green="0.61906577145241892" blue="0.62351284898832482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="EGO-vC-pBj" firstAttribute="trailing" secondItem="Wse-z9-nsz" secondAttribute="trailing" id="F95-NM-rts"/>
-                            <constraint firstItem="Wse-z9-nsz" firstAttribute="top" secondItem="GQC-6H-HPT" secondAttribute="bottom" id="I8o-c5-qTv"/>
-                            <constraint firstItem="GQC-6H-HPT" firstAttribute="leading" secondItem="EGO-vC-pBj" secondAttribute="leading" id="Ikx-N2-gZG"/>
                             <constraint firstItem="EGO-vC-pBj" firstAttribute="bottom" secondItem="HkK-E0-bcP" secondAttribute="bottom" constant="2" id="QU5-s9-e6s"/>
-                            <constraint firstItem="GQC-6H-HPT" firstAttribute="height" secondItem="BI9-o7-97q" secondAttribute="height" multiplier="1/12" id="iec-mr-Ny6"/>
                             <constraint firstItem="EGO-vC-pBj" firstAttribute="trailing" secondItem="HkK-E0-bcP" secondAttribute="trailing" id="lEc-Oh-Psk"/>
                             <constraint firstItem="HkK-E0-bcP" firstAttribute="top" secondItem="Wse-z9-nsz" secondAttribute="bottom" constant="1" id="lXG-BW-e2u"/>
                             <constraint firstItem="HkK-E0-bcP" firstAttribute="leading" secondItem="EGO-vC-pBj" secondAttribute="leading" id="pPL-99-JQG"/>
-                            <constraint firstItem="EGO-vC-pBj" firstAttribute="trailing" secondItem="GQC-6H-HPT" secondAttribute="trailing" id="rGE-cL-090"/>
-                            <constraint firstItem="GQC-6H-HPT" firstAttribute="top" secondItem="EGO-vC-pBj" secondAttribute="top" constant="-20" id="xlV-wz-jY2"/>
+                            <constraint firstItem="Wse-z9-nsz" firstAttribute="top" secondItem="EGO-vC-pBj" secondAttribute="top" id="rC2-Z2-SkP"/>
                             <constraint firstItem="Wse-z9-nsz" firstAttribute="leading" secondItem="EGO-vC-pBj" secondAttribute="leading" id="zpY-QE-vVr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EGO-vC-pBj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MVQ-ia-cEK"/>
                     <connections>
                         <outlet property="btnSendMess" destination="hH1-uz-rtR" id="Y7C-f2-d0H"/>
                         <outlet property="constrainBottomTextView" destination="QU5-s9-e6s" id="3O9-zn-zTW"/>
@@ -150,6 +123,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="row-Jt-Xs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224.8" y="38.23088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EsH-W9-aEv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GHZ-hk-dSL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qEZ-Oo-KF6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jt0-hl-Kjj" kind="relationship" relationship="rootViewController" id="XKh-9q-oUd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqf-dt-a8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285.60000000000002" y="38.23088455772114"/>
         </scene>

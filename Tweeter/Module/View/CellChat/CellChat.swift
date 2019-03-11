@@ -42,7 +42,7 @@ class CellChat: UITableViewCell {
         contentView.addSubview(viewBackgroundContentChat)
         viewBackgroundContentChat.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         viewBackgroundContentChat.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
-        viewBackgroundContentChat.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        viewBackgroundContentChat.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6).isActive = true
         viewBackgroundContentChat.widthAnchor.constraint(lessThanOrEqualTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         viewBackgroundContentChat.layoutIfNeeded()
         viewBackgroundContentChat.layer.cornerRadius = viewBackgroundContentChat.bounds.size.height/15
